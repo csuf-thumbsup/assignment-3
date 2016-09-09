@@ -58,8 +58,9 @@ Once I passed all the initial checks I split the line into a list by spaces (del
     becomes:
     ['t=', 'num1', '+', 'num2;']
     
-Next, I looped over that list from the line looking at each individual element one by one
-This came with a simple check to see if it's length is 1 AND is a char terminal defined in [',', ';', '+', '-', '*', '/', '=']
+Next, I looped over that list from the line looking at each individual element one by one.
+
+This came with a simple check to see if it's length is 1 AND is a char terminal defined in > [',', ';', '+', '-', '*', '/', '=']
 If so then I just simply added a space to it
 
 Else
