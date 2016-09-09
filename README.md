@@ -53,6 +53,7 @@ Once I passed all the initial checks I split the line into a list by spaces (del
     
     e.g.
     t=   num1  +  num2;
+    using: str_line = str_line[:str_line.index('//')]
     becomes:
     ['t=', 'num1', '+', 'num2;']
     
@@ -78,7 +79,7 @@ That splits some text_str where a character matches from the following terminal 
 Then i joined that split_text_str back together with spaces following each item
     
     Goes from ['num2', ';', '']  
-    using ' '.join(split_text_str)
+    using: ' '.join(split_text_str)
     becomes: num2 ; 
     # note that there is a space after the semicolon it just cant be seen.
     
