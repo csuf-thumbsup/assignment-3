@@ -22,7 +22,7 @@ def beautify(datalist):
         # replace terminals with spaces
         str_list = list(str_line)
         for char in str_list:
-            if char in [',', '+', '-', '*', '/', '=']:
+            if char in [',', ';', '+', '-', '*', '/', '=']:
                 str_list[str_list.index(char)] = ' ' + str(char) + ' '
 
         # rejoin list and now split by spaces so every char has proper format
