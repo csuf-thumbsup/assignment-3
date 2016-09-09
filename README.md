@@ -46,6 +46,7 @@ From there I then looped through each line and did some initial checks like if t
    
     e.g. 
     t=   num1  +  num2;//compute num1+num2
+    using: str_line = str_line[:str_line.index('//')]
     becomes:
     t=   num1  +  num2;
     
@@ -53,7 +54,7 @@ Once I passed all the initial checks I split the line into a list by spaces (del
     
     e.g.
     t=   num1  +  num2;
-    using: str_line = str_line[:str_line.index('//')]
+    using: str_line.split()
     becomes:
     ['t=', 'num1', '+', 'num2;']
     
