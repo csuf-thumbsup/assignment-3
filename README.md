@@ -23,3 +23,18 @@ Given the following text file "data.txt". Write a program to copy the file into 
     t = num1 + num2 ;
     t = t + num3 ;
     cout<< t ;    
+    
+    
+--
+
+###Results from my attempt at Assignment 3:
+
+    int num1 , nume2 , num3  , t ; 
+    num1 =3 ; num2 = 5 ; 
+    num3 = 7 ; 
+    t=num1 + num2 ; 
+    t = t + num3 ; 
+    cout<< t ; 
+    
+There's some issues with spacing and having things be on a newline... but it sorta works.
+
