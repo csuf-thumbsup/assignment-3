@@ -35,7 +35,7 @@ Given the following text file "data.txt". Write a program to copy the file into 
     cout<< t ;
 
 
-I refactored my code and its way way cleaner and easier to follow through plus it goes about beautifying the input in a simpler way. If you still want to check out my explanation for the old version of the code then just look at the [old.README.md](https://github.com/csuf-thumbsup/assignment-3/blob/Michael/old.README.md). Same goes for the [old.Main.py](https://github.com/csuf-thumbsup/assignment-3/blob/Michael/old.Main.py).
+I refactored my code and its so much cleaner and easier to follow through plus it goes about beautifying the input in a simpler way. If you still want to check out my explanation for the old version of the code then just look at the [old.README.md](https://github.com/csuf-thumbsup/assignment-3/blob/Michael/old.README.md). Same goes for the [old.Main.py](https://github.com/csuf-thumbsup/assignment-3/blob/Michael/old.Main.py).
 
 I still have issues with multiple semi-colons per line and am trying to figure it out... but I'm sure you guys will come up with the answer in c++. 
 
