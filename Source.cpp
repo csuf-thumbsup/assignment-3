@@ -38,8 +38,7 @@ string getData()
 	string line, result;
 	while (getline(fs, line))
 	{
-		// pre checks
-		//cout << line << endl;
+		// pre-filters
 		// skip line if it starts with a comment "\\"
 		if (line[0] == '\/' && line[1] == '\/')
 		{
@@ -57,7 +56,7 @@ string getData()
 			//trim trailing whitespaces from line
 			trim(line);
 
-			result += line ;
+			result += line;
 		}
 	}
 	return result;
@@ -83,7 +82,7 @@ void removeMultiSpaces(string &str)
 
 string processData(string data)
 {
-	string result, temp;
+	string temp, result;
 	stringstream ss;
 	bool space_used = false;
 
@@ -95,19 +94,15 @@ string processData(string data)
 			//special case for semicolons
 			if (data[i] == ';')
 			{
-				result += ' ';
-				result += data[i];
-				result += '\n';
+				ss << ' ' << data[i] << '\n';
 			}
 			else if (is_terminal(data[i]))
 			{
-				result += ' ';
-				result += data[i];
-				result += ' ';
+				ss << ' ' << data[i] << ' ';
 			}
 			else
 			{
-				result += data[i];
+				ss << data[i];
 			}
 			//reset space_used flag
 			space_used = false;
@@ -117,14 +112,11 @@ string processData(string data)
 			if (!space_used)
 			{
 				// only add one space
-				result += ' ';
+				ss << ' ';
 				space_used = true;
 			}
 		}
 	}
-
-	ss.str(result); // store semi-formatted string into ss
-	result.clear(); // clear out content to reuse
 
 	while (!ss.eof())
 	{
