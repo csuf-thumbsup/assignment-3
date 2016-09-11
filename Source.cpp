@@ -1,6 +1,8 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <sstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -68,11 +70,24 @@ bool is_terminal(char ch)
 	return false;
 }
 
+bool bothAreSpaces(char lhs, char rhs) 
+{
+	return (lhs == rhs) && (lhs == ' '); 
+}
+
+void removeMultiSpaces(string &str)
+{
+	string::iterator new_end = unique(str.begin(), str.end(), bothAreSpaces);
+	str.erase(new_end, str.end());
+}
+
 string processData(string data)
 {
-	string result;
+	string result, temp;
+	stringstream ss;
 	bool space_used = false;
 
+	// semi-format string 
 	for (int i = 0; i < data.size(); i++)
 	{
 		if (!isspace(data[i]))
@@ -80,19 +95,19 @@ string processData(string data)
 			//special case for semicolons
 			if (data[i] == ';')
 			{
+				result += ' ';
 				result += data[i];
 				result += '\n';
 			}
 			else if (is_terminal(data[i]))
 			{
-				result += " ";
+				result += ' ';
 				result += data[i];
-				result += " ";
+				result += ' ';
 			}
 			else
 			{
 				result += data[i];
-
 			}
 			//reset space_used flag
 			space_used = false;
@@ -101,14 +116,25 @@ string processData(string data)
 		{
 			if (!space_used)
 			{
-
 				// only add one space
 				result += ' ';
 				space_used = true;
 			}
 		}
-
 	}
+
+	ss.str(result); // store semi-formatted string into ss
+	result.clear(); // clear out content to reuse
+
+	while (!ss.eof())
+	{
+		// beautifying each line 
+		getline(ss, temp);
+		trim(temp);
+		removeMultiSpaces(temp);
+		result += temp + '\n';
+	}
+
 	return result;
 }
 
