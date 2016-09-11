@@ -26,7 +26,7 @@ def beautify(datalist):
         # strip leading/following whitespace
         str_line.strip()
 
-        # replace terminals with spaces
+        # update terminals with spaces
         str_list = list(str_line)
         for char in str_list:
             if char in [',', ';', '+', '-', '*', '/', '=']:
