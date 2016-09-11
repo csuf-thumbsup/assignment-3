@@ -57,4 +57,3 @@ if __name__ == '__main__':
     datalist = get_data_list("data.txt")
     beautified_text = beautify(datalist)
     save_changes(beautified_text)
-    print('\n\n--------------------------------\n' + beautified_text)
