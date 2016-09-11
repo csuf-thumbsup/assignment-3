@@ -12,7 +12,7 @@ using namespace std;
 
 void removeComments(string &str)
 {
-	int endpos = str.find_first_of('//');
+	size_t endpos = str.find_first_of('//');
 	if (string::npos != endpos)
 	{
 		str = str.substr(0, endpos);
@@ -22,8 +22,8 @@ void removeComments(string &str)
 void trim(string &str)
 {
 	// trim trailing & leading spaces
-	int startpos = str.find_first_not_of(" \t");
-	int endpos = str.find_last_not_of(" \t");
+	size_t startpos = str.find_first_not_of(" \t");
+	size_t endpos = str.find_last_not_of(" \t");
 
 	if (string::npos != startpos && string::npos != endpos)
 	{

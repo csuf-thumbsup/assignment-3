@@ -1,5 +1,6 @@
 # CPSC 323
-# Group 11
+# Group #11
+# Names: Rogelio Negrete, Ivan Vu, Angelo Salac
 
 def get_data_list(filename):
     # get list of each line in the file
@@ -26,7 +27,7 @@ def beautify(datalist):
         # strip leading/following whitespace
         str_line.strip()
 
-        # update terminals with spaces
+        # replace terminals with spaces
         str_list = list(str_line)
         for char in str_list:
             if char in [',', ';', '+', '-', '*', '/', '=']:
