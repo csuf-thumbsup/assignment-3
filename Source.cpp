@@ -17,18 +17,13 @@ void removeComments(string &str)
 
 void trim(string &str)
 {
-	// trim leading spaces
-	size_t startpos = str.find_first_not_of(" \t");
-	if (string::npos != startpos)
-	{
-		str = str.substr(startpos);
-	}
+	// trim trailing & leading spaces
+	int startpos = str.find_first_not_of(" \t");
+	int endpos = str.find_last_not_of(" \t");
 
-	// trim trailing spaces
-	size_t endpos = str.find_last_not_of(" \t");
-	if (string::npos != endpos)
+	if (string::npos != startpos && string::npos != endpos)
 	{
-		str = str.substr(0, endpos + 1);
+		str = str.substr(startpos, endpos + 1);
 	}
 }
 
@@ -84,7 +79,6 @@ string processData(string data)
 {
 	string temp, result;
 	stringstream ss;
-	bool space_used = false;
 
 	// semi-format string 
 	for (int i = 0; i < data.size(); i++)
@@ -104,17 +98,10 @@ string processData(string data)
 			{
 				ss << data[i];
 			}
-			//reset space_used flag
-			space_used = false;
 		}
-		else
+		else 
 		{
-			if (!space_used)
-			{
-				// only add one space
-				ss << ' ';
-				space_used = true;
-			}
+			ss << data[i];
 		}
 	}
 
