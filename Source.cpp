@@ -1,3 +1,8 @@
+/* CPSC 323
+ * Group #11
+ * Names: Rogelio Negrete, Ivan Vu, Angelo Salac
+ */
+
 #include <fstream>
 #include <string>
 #include <sstream>
