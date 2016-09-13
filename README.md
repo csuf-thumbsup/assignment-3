@@ -37,6 +37,7 @@ Given the following text file "data.txt". Write a program to copy the file into 
 
 
 I refactored my code and its so much cleaner and easier to follow through plus it goes about beautifying the input in a simpler way. If you still want to check out my explanation for the old version of the code then just look at the [old.README.md](https://github.com/csuf-thumbsup/assignment-3/blob/Michael/old.README.md). Same goes for the [old.Main.py](https://github.com/csuf-thumbsup/assignment-3/blob/Michael/old.Main.py).
+\- Michael
 
 ####DONE!!! It works in python. AND in C++
 
