@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -8,32 +9,39 @@ int main() {
 	int state = 0;
 	int col;
 	string w;
+	ifstream file;
 
-	cout << "Enter a string that ends with $: ";
-	cin >> w;
+	file.open("data.txt");
+	
+	do {
 
-	for (int i = 0; i < w.length(); i++) {
-		if (w[i] == 'a') {
-			col = 0;
-		}
-		else if (w[i] == 'b') {
-			col = 1;
-		}
-		else if (w[i] == '$') {
-			if (state == 2 || state == 3) {
-				cout << w << " is accepted. \n";
+		file >> w;
+		for (int i = 0; i < w.length(); i++) {
+			if (w[i] == 'a') {
+				col = 0;
 			}
-			else{
-				cout << "Not accepted\n";
+			else if (w[i] == 'b') {
+				col = 1;
 			}
+			else if (w[i] == '$') {
+				if (state == 2 || state == 3) {
+					cout << w << " is accepted. \n";
+				}
+				else{
+					cout << w << " is not accepted\n";
+				}
 			
+			}
+			else {
+				cout << w << " is not accepted\n";
+				break;
+			}
+			state = table[state][col];
 		}
-		else {
-			cout << "Not accepted\n";
-			break;
-		}
-		state = table[state][col];
-	}
+	} while (!file.eof());
 
+	
+
+	file.close();
 	return 0;
 }
