@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-	int table[4][2] = { { 1, 2 }, { 1, 2 }, { 3, 2 }, {3, 3} };
+	int table[5][2] = { { 1, 2 }, { 1, 3 }, { 4, 2 }, { 4, 4 }, {4, 4} };
 	int state = 0;
 	int col;
 	string w;
@@ -20,7 +20,13 @@ int main() {
 			col = 1;
 		}
 		else if (w[i] == '$') {
-			cout << w << " is accepted. \n";
+			if (state == 2 || state == 3) {
+				cout << w << " is accepted. \n";
+			}
+			else{
+				cout << "Not accepted\n";
+			}
+			
 		}
 		else {
 			cout << "Not accepted\n";
@@ -28,6 +34,6 @@ int main() {
 		}
 		state = table[state][col];
 	}
-	
+
 	return 0;
 }
